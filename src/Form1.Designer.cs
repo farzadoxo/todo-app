@@ -45,28 +45,6 @@ partial class Form1
 
         // Define control properties and Locations
 
-        mainMenuStrip = new MenuStrip
-        {
-            BackColor = ColorTranslator.FromHtml("#f8f8f8")
-        };
-            // main menus
-        ToolStripMenuItem fileMenuItem = new ToolStripMenuItem("File");
-        ToolStripMenuItem editMenuItem = new ToolStripMenuItem("Edit");
-            // sub menus
-        ToolStripMenuItem newMenuItem = new ToolStripMenuItem("New");
-        ToolStripMenuItem importTodos = new ToolStripMenuItem("Import");
-        ToolStripMenuItem exportTodos = new ToolStripMenuItem("Export");
-            // add main menus to menustrip
-        mainMenuStrip.Items.Add(fileMenuItem);
-        mainMenuStrip.Items.Add(editMenuItem);
-            // add sub menus to main menus
-        fileMenuItem.DropDownItems.Add(newMenuItem);
-        fileMenuItem.DropDownItems.Add(importTodos);
-        fileMenuItem.DropDownItems.Add(exportTodos);    
-
-
-
-
         addTaskButton = new Button
         {
             Text = "Add",
@@ -107,11 +85,22 @@ partial class Form1
             Location = new Point(3,105)
         };
 
+        importOpenFileDialog = new OpenFileDialog
+        {
+            Title = "Select a text file",
+            Filter = "Text files (*.txt)|*.txt"
+        };
+        
+        exportSaveFileDialog = new SaveFileDialog
+        {
+            Title = "Pick a name",
+            Filter = "Text files (*.txt)|*.txt"
+        };
+
 
         // Add controls to main Form
         this.Controls.Add(addTaskButton);
         this.Controls.Add(textBoxLabel);
-        this.Controls.Add(mainMenuStrip);
         this.Controls.Add(taskTextBox);
         this.Controls.Add(listBoxLabel);
         this.Controls.Add(line);
@@ -123,7 +112,6 @@ partial class Form1
     #endregion
 
 
-private MenuStrip mainMenuStrip;
 private Button addTaskButton;
 private ListBox tasksListBox;
 private TextBox taskTextBox;
@@ -131,4 +119,6 @@ private TextBox taskTextBox;
 private Label listBoxLabel;
 private Label textBoxLabel;
 private Panel line;
+private OpenFileDialog importOpenFileDialog;
+private SaveFileDialog exportSaveFileDialog;
 }
