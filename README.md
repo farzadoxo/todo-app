@@ -9,7 +9,7 @@ git clone https://github.com/farzadoxo/todo-app
 dotnet build
 dotnet run
 ```
-<a src="https://github.com/farzadoxo/todo-app/releases">📥 Check release</a>
+<a href="https://github.com/farzadoxo/todo-app/releases">📥 Check release </a>
 
 ## Options
 - import or export todo with .txt files
