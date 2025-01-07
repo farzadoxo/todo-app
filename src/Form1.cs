@@ -9,7 +9,7 @@ public partial class Form1 : Form
         InitializeComponent();
         InitializeMenu();
         addTaskButton.Click += addTaskButton_Click;
-
+        
     }
 
     private void InitializeMenu()
@@ -136,7 +136,17 @@ public partial class Form1 : Form
     {
         if(tasksListBox.SelectedItem != null)
         {
-            tasksListBox.Items[tasksListBox.SelectedIndex] = String.Format("✅  {0}",tasksListBox.Items[tasksListBox.SelectedIndex]);
+            string todo = tasksListBox.Items[tasksListBox.SelectedIndex].ToString();
+            if(todo[0] != '✅')
+            {
+                tasksListBox.Items[tasksListBox.SelectedIndex] = String.Format("✅{0}",tasksListBox.Items[tasksListBox.SelectedIndex]);
+            }
+            else
+            {
+                string uncheckemarked_todo = todo.Remove(0,1);
+                tasksListBox.Items[tasksListBox.SelectedIndex] = String.Format(uncheckemarked_todo);
+            }   
+            
         }
         else
         {
@@ -161,7 +171,6 @@ public partial class Form1 : Form
         }
             
     }
-
 
 
 }
