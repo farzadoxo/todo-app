@@ -38,7 +38,7 @@ partial class Form1
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.Fixed3D;
         this.BackColor = Color.White;
-        this.Icon = new Icon(@""); // set icon path (.ico)
+        // this.Icon = new Icon(@""); // set icon path (.ico)
         this.MainMenuStrip = mainMenuStrip;
         
 
